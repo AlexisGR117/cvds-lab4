@@ -78,6 +78,7 @@ public class GameModel {
         } else {
             correctCount += positions.size();
         }
+        // Aqui poner el metodo
         return positions;
         
     }

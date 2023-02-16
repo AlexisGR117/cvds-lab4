@@ -13,6 +13,8 @@ public interface GameScore {
 	 * @param correctCount Numero de letras correctas.
 	 * @param incorrectCount Numero letras incorrectas.
 	 * @return Numero entero con el puntaje.
+	 * @pre Se hizo el calculo de las letras correctas e incorrectas.
+	 * @pos Se calculo el puntaje de acuerdo a las letras correctas e incorrectas.
 	 * @throws HangmanModelException INVALID_CORRECT_COUNT, si el numero de letras correctas es menor que cero.
 	 * 								 INVALID_INCORRECT_COUNT, si el numero de letras incorrectas es menor que cero.
 	 */

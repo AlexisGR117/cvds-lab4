@@ -7,7 +7,7 @@ package hangman.model;
  * @author jefer.gonzalez
  * @version 1.0 (02/16/2023)
  */
-public class PowerScore  implements GameScore {
+public class PowerScore implements GameScore {
 
 	/**
 	 * Metodo que calcula el puntaje del juego basada en las letras correctas e incorrectas.
@@ -15,6 +15,10 @@ public class PowerScore  implements GameScore {
 	 * @param correctCount Numero de letras correctas.
 	 * @param incorrectCount Numero letras incorrectas.
 	 * @return Numero entero con el puntaje.
+	 * @pre Se hizo el calculo de las letras correctas e incorrectas.
+	 * @pos Puntaje calculado teniendo en cuenta que el puntaje inicial es 0, se bonifican la i-esima letra
+	 * correcta con 5^i puntos, se penaliza con 8 puntos cada letra incorrecta y el puntaje minimo es 0.
+	 * Si sobrepasa 500 puntos, el puntaje es 500.
 	 * @throws HangmanModelException INVALID_CORRECT_COUNT, si el numero de letras correctas es menor que cero.
 	 * 								 INVALID_INCORRECT_COUNT, si el numero de letras incorrectas es menor que cero.
 	 */
