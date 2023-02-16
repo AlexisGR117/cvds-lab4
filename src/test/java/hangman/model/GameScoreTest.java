@@ -25,7 +25,7 @@ public class GameScoreTest {
         	score.calculateScore(-5, 10);
             fail("Did not throw exception");
         } catch (HangmanModelException e) {
-            assertEquals(HangmanModelException.INVALID_INCORRECT_COUNT, e.getMessage());
+            assertEquals(HangmanModelException.INVALID_CORRECT_COUNT, e.getMessage());
         }  
     } 
     
@@ -47,7 +47,7 @@ public class GameScoreTest {
         	score.calculateScore(-1, 10);
             fail("Did not throw exception");
         } catch (HangmanModelException e) {
-            assertEquals(HangmanModelException.INVALID_INCORRECT_COUNT, e.getMessage());
+            assertEquals(HangmanModelException.INVALID_CORRECT_COUNT, e.getMessage());
         }  
     } 
     
@@ -66,7 +66,7 @@ public class GameScoreTest {
     public void pruebaNumerosMayoresA0Correctas3Incorrectas4ConPowerScoreResultado93() {
     	try {
     		PowerScore score = new PowerScore();
-			assertEquals(score.calculateScore(3, 4), 93);
+			assertEquals(93, score.calculateScore(3, 4));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -76,7 +76,7 @@ public class GameScoreTest {
     public void pruebaPuntajeMayorA500Resultado500() {
     	try {
     		PowerScore score = new PowerScore();
-			assertEquals(score.calculateScore(4, 10), 500);
+			assertEquals(500, score.calculateScore(4, 10));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -86,7 +86,7 @@ public class GameScoreTest {
     public void pruebaPuntajeMenorA0Resultado0ConPowerScore() {
     	try {
     		PowerScore score = new PowerScore();
-			assertEquals(score.calculateScore(2, 10), 0);
+			assertEquals(0, score.calculateScore(2, 10));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -96,7 +96,7 @@ public class GameScoreTest {
     public void noDeberiaLanzarExcepcionSiElNumeroDeLetrasCorrectasEsIgualA0ConPowerScore() {
     	try {
     		PowerScore score = new PowerScore();
-			assertEquals(score.calculateScore(0, 4), 0);
+			assertEquals(0, score.calculateScore(0, 4));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -106,7 +106,7 @@ public class GameScoreTest {
     public void noDeberiaLanzarExcepcionSiElNumeroDeLetrasIncorrectasEsIgualA0ConPowerScore() {
     	try {
     		PowerScore score = new PowerScore();
-			assertEquals(score.calculateScore(3, 0), 125);
+			assertEquals(125, score.calculateScore(3, 0));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -124,7 +124,7 @@ public class GameScoreTest {
         	score.calculateScore(-1, 3);
             fail("Did not throw exception");
         } catch (HangmanModelException e) {
-            assertEquals(HangmanModelException.INVALID_INCORRECT_COUNT, e.getMessage());
+            assertEquals(HangmanModelException.INVALID_CORRECT_COUNT, e.getMessage());
         }  
     } 
     
@@ -146,7 +146,7 @@ public class GameScoreTest {
         	score.calculateScore(-1, 8);
             fail("Did not throw exception");
         } catch (HangmanModelException e) {
-            assertEquals(HangmanModelException.INVALID_INCORRECT_COUNT, e.getMessage());
+            assertEquals(HangmanModelException.INVALID_CORRECT_COUNT, e.getMessage());
         }  
     } 
     
@@ -165,7 +165,7 @@ public class GameScoreTest {
     public void pruebaNumerosMayoresA0Correctas3Incorrectas5ConOriginalScoreResultado50() {
     	try {
     		OriginalScore score = new OriginalScore();
-			assertEquals(score.calculateScore(3, 5), 50);
+			assertEquals(50, score.calculateScore(3, 5));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -175,7 +175,7 @@ public class GameScoreTest {
     public void pruebaPuntajeMenorA0Resultado0ConOriginalScore() {
     	try {
     		OriginalScore score = new OriginalScore();
-			assertEquals(score.calculateScore(6, 12), 0);
+			assertEquals(0, score.calculateScore(6, 12));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -185,7 +185,7 @@ public class GameScoreTest {
     public void noDeberiaLanzarExcepcionSiElNumeroDeLetrasCorrectasEsIgualA0ConOriginalScore() {
     	try {
     		OriginalScore score = new OriginalScore();
-			assertEquals(score.calculateScore(0, 5), 50);
+			assertEquals(50, score.calculateScore(0, 5));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -195,7 +195,7 @@ public class GameScoreTest {
     public void noDeberiaLanzarExcepcionSiElNumeroDeLetrasIncorrectasEsIgualA0ConOriginalScore() {
     	try {
     		OriginalScore score = new OriginalScore();
-			assertEquals(score.calculateScore(8, 0), 100);
+			assertEquals(100, score.calculateScore(8, 0));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -212,7 +212,7 @@ public class GameScoreTest {
         	score.calculateScore(-1, 5);
             fail("Did not throw exception");
         } catch (HangmanModelException e) {
-            assertEquals(HangmanModelException.INVALID_INCORRECT_COUNT, e.getMessage());
+            assertEquals(HangmanModelException.INVALID_CORRECT_COUNT, e.getMessage());
         }  
     } 
     
@@ -234,7 +234,7 @@ public class GameScoreTest {
         	score.calculateScore(-1, 15);
             fail("Did not throw exception");
         } catch (HangmanModelException e) {
-            assertEquals(HangmanModelException.INVALID_INCORRECT_COUNT, e.getMessage());
+            assertEquals(HangmanModelException.INVALID_CORRECT_COUNT, e.getMessage());
         }  
     } 
     
@@ -253,7 +253,7 @@ public class GameScoreTest {
     public void pruebaNumerosMayoresA0Correctas6Incorrectas5ConBonusScoreResultado35() {
     	try {
     		BonusScore score = new BonusScore();
-			assertEquals(score.calculateScore(6, 5), 35);
+			assertEquals(35, score.calculateScore(6, 5));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -263,7 +263,7 @@ public class GameScoreTest {
     public void pruebaPuntajeMenorA0Resultado0ConBonusScore() {
     	try {
     		BonusScore score = new BonusScore();
-			assertEquals(score.calculateScore(6, 12), 0);
+			assertEquals(0, score.calculateScore(6, 12));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -273,7 +273,7 @@ public class GameScoreTest {
     public void noDeberiaLanzarExcepcionSiElNumeroDeLetrasCorrectasEsIgualA0ConBonusScore() {
     	try {
     		BonusScore score = new BonusScore();
-			assertEquals(score.calculateScore(0, 4), -20);
+			assertEquals(0, score.calculateScore(0, 4));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 
@@ -283,7 +283,7 @@ public class GameScoreTest {
     public void noDeberiaLanzarExcepcionSiElNumeroDeLetrasIncorrectasEsIgualA0ConBonusScore() {
     	try {
     		BonusScore score = new BonusScore();
-			assertEquals(score.calculateScore(8, 0), 80);
+			assertEquals(80, score.calculateScore(8, 0));
 		} catch (HangmanModelException e) {
 			fail("Threw a exception");
 		} 

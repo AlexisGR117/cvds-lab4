@@ -22,7 +22,10 @@ public class BonusScore implements GameScore {
 	 * 								 INVALID_INCORRECT_COUNT, si el numero de letras incorrectas es menor que cero.
 	 */
 	public int calculateScore(int correctCount, int incorrectCount) throws HangmanModelException {
-		return 0;
+		if (correctCount < 0) throw new HangmanModelException(HangmanModelException.INVALID_CORRECT_COUNT);
+		if (incorrectCount < 0) throw new HangmanModelException(HangmanModelException.INVALID_INCORRECT_COUNT);
+		int resultado = correctCount * 10 - incorrectCount * 5;
+		return (resultado >= 0 ? resultado : 0);
 	}
 
 }
